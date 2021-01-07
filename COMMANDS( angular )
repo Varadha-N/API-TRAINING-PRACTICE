@@ -1,0 +1,32 @@
+            ANGULAR .. SET UP DETAILS
+            -------------------------
+
+1.Set up your environment.
+2.Create a new workspace and initial app project.
+3.Serve the application.
+4.Make changes to the application.
+
+
+      COMMANDS
+      -------
+     
+     
+1. Create a new workspace and an initial application
+ 
+ -------------------------------- 
+ | ng new simple-angular-project |
+ --------------------------------
+
+2. Serve the application
+
+
+ ------------------
+ | ng serve --open |
+ ------------------
+
+3. To generate components.
+
+ -------------------------------- 
+ | ng generate component products |
+ --------------------------------
+
