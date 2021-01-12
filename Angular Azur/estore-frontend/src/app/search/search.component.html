@@ -1,0 +1,15 @@
+<p>{{criteria}}:{{value}}</p>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>         
+        <!-- <th>Update</th>
+        <th>Delete</th> -->
+    </tr>
+    <tr *ngFor="let data of datas">
+        <td>{{data.name}}</td>
+        <td>{{data.category}}</td>
+        <td>{{data.price}}</td>
+    </tr>
+</table>

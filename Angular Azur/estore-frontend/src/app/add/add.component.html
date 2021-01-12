@@ -1,0 +1,35 @@
+<h1>Products</h1>
+<label>Search</label>
+<select>
+    <option name="name">Name</option>
+    <option name="category">Category</option>
+    <option name="Price">Price</option>
+</select>
+<input type="text" name="criteria">
+<input type="button" routerLink="/searchProducts" value="Find" name="find" routerLinkActive="activebutton"/>
+
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>         
+        <!-- <th>Update</th>
+        <th>Delete</th> -->
+    </tr>
+    <tr *ngFor="let data of datas">
+        <td>{{data.name}}</td>
+        <td>{{data.category}}</td>
+        <td>{{data.price}}</td>
+        <td><a href="/showUpdate">Update</a></td>
+        <td><a href="">Delete</a></td>
+    </tr>
+    <tr>
+        <td><input #name type="text" name="name"/></td>
+        <td><input #category type="text" name="category"/></td>
+        <td><input #price type="text" name="price"/></td>
+        <td><input type="button" (click)="addProduct(name.value , category.value , price.value)"   value="add" /></td>
+    </tr>
+</table>
+
+<router-outlet></router-outlet>

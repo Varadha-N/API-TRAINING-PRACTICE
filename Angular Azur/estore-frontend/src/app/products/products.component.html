@@ -1,0 +1,35 @@
+<h1>Products</h1>
+<label>Search</label>
+
+<select #criteria >
+    <option value="name">Name</option>
+    <option value="category">Category</option>
+    <option value="price">Price</option>
+</select>
+<input #condition type="text" name="condition">
+<input type="button" (click)="searchProduct(criteria.value,condition.value)" value="Find" name="find"/>
+
+<br>
+<br>
+<br>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>         
+        <!-- <th>Update</th>
+        <th>Delete</th> -->
+    </tr>
+    <tr *ngFor="let data of datas">
+        <td>{{data.name}}</td>
+        <td>{{data.category}}</td>
+        <td>{{data.price}}</td>
+        <td><button (click)='updateProduct(data.id)' name="update">Update</button></td>
+        <td><button (click)='deleteProduct(data.id)' name="delete">Delete</button></td>
+    </tr>
+    <tr>
+        <td colspan="3"><input type="button"  routerLink="/add" name="addnew" value="+"/></td>
+    </tr>
+</table>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,43 @@
+<h1>Products</h1>
+<label>Search</label>
+<select #criteria >
+    <option value="name">Name</option>
+    <option value="category">Category</option>
+    <option value="price">Price</option>
+</select>
+<input #condition type="text" name="condition">
+<input type="button" value="Find" name="find"/>
+
+<br>
+<br>
+<br>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>         
+        <!-- <th>Update</th>
+        <th>Delete</th> -->
+    </tr>
+            <!-- <tr> -->
+                <!-- <ng-template [ngIf]="data.id:{{id}}" [ngIfElse]="loading"> -->
+    <tr *ngFor="let data of datas">
+        <ng-container  *ngIf="data.id==id; else elseblock">
+            <td><input #name value={{data.name}}></td>
+            <td><input #category value={{data.category}}></td>
+            <td><input #price value={{data.price}}></td>
+            <td><button name="update" (click)="updateProduct(name.value , category.value , price.value)">Update</button></td>
+        </ng-container>
+        <ng-template #elseblock>
+            <td>{{data.name}}</td>
+            <td>{{data.category}}</td>
+            <td>{{data.price}}</td>
+        </ng-template>
+    </tr>
+    <tr>
+        <td colspan="3"><input type="button"  routerLink="/addProduct" name="addnew" value="+"/></td>
+    </tr>
+</table>
+
+<router-outlet></router-outlet>
