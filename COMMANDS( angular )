@@ -30,3 +30,4 @@
  | ng generate component products |
  --------------------------------
 
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
